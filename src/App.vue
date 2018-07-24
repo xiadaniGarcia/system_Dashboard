@@ -1,6 +1,7 @@
 <template>
   <v-app>
-    <v-navigation-drawer temporary v-model="sideNav">
+    <div >
+    <v-navigation-drawer temporary v-model="sideNav" >
       <v-list>
         <v-list-tile
           v-for="item in menuItems"
@@ -21,7 +22,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar dark class="primary">
+    <v-toolbar dark style="background: linear-gradient(to right,#90caf9, #047edf);">
       <v-toolbar-side-icon
         @click.stop="sideNav = !sideNav"
         class="hidden-sm-and-up "></v-toolbar-side-icon>
@@ -52,6 +53,7 @@
     <main>
       <router-view></router-view>
     </main>
+    </div>
   </v-app>
 </template>
 
@@ -70,8 +72,8 @@
         ]
         if (this.userIsAuthenticated) {
           menuItems = [
-            {icon: 'supervisor_account', title: 'View Meetups', link: '/meetups'},
-            {icon: 'room', title: 'Organize Meetup', link: '/meetup/new'},
+            {icon: 'supervisor_account', title: 'Manage tickets', link: '/meetups'},
+            {icon: 'room', title: 'Raise ticket', link: '/meetup/new'},
             {icon: 'person', title: 'Profile', link: '/profile'}
           ]
         }

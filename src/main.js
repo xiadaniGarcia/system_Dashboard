@@ -7,6 +7,15 @@ import { store } from './store'
 import DateFilter from './filters/date'
 import AlertCmp from './components/Shared/Alert.vue'
 
+require('../css/style.css')
+require('../vendors/iconfonts/mdi/css/materialdesignicons.min.css')
+require('../vendors/css/vendor.bundle.base.css')
+require('../css/style.css')
+require('../vendors/iconfonts/mdi/css/materialdesignicons.min.css')
+require('../images/favicon.png')
+require('../css/style.css')
+require('../vendors/css/vendor.bundle.base.css')
+
 Vue.use(Vuetify)
 Vue.config.productionTip = false
 
@@ -21,11 +30,12 @@ new Vue({
   render: h => h(App),
   created () {
     firebase.initializeApp({
-      apiKey: 'AIzaSyCFYWd6FpR53u4hSPXQSjOYeZNPF1FxG2M',
-      authDomain: 'yt-devmeetup.firebaseapp.com',
-      databaseURL: 'https://yt-devmeetup.firebaseio.com',
-      projectId: 'yt-devmeetup',
-      storageBucket: ''
+      apiKey: 'AIzaSyCfmiCCSrvbe9FyGh4BBJ4FriUx-c15egg',
+      authDomain: 'pruebas123-feac4.firebaseapp.com',
+      databaseURL: 'https://pruebas123-feac4.firebaseio.com',
+      projectId: 'pruebas123-feac4',
+      storageBucket: 'pruebas123-feac4.appspot.com',
+      messagingSenderId: '275988567842'
     })
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {

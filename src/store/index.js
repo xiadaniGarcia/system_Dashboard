@@ -6,24 +6,6 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    loadedMeetups: [
-      {
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/47/New_york_times_square-terabass.jpg',
-        id: 'afajfjadfaadfa323',
-        title: 'Meetup in New York',
-        date: new Date(),
-        location: 'New York',
-        description: 'New York, New York!'
-      },
-      {
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Paris_-_Blick_vom_gro%C3%9Fen_Triumphbogen.jpg',
-        id: 'aadsfhbkhlk1241',
-        title: 'Meetup in Paris',
-        date: new Date(),
-        location: 'Paris',
-        description: 'It\'s Paris!'
-      }
-    ],
     user: null,
     loading: false,
     error: null
@@ -51,16 +33,16 @@ export const store = new Vuex.Store({
   actions: {
     loadMeetups ({commit}) {
       commit('setLoading', true)
-      firebase.database().ref('meetups').once('value')
+      firebase.database().ref('tickets').once('value')
         .then((data) => {
           const meetups = []
           const obj = data.val()
           for (let key in obj) {
             meetups.push({
               id: key,
-              title: obj[key].title,
-              description: obj[key].description,
-              imageUrl: obj[key].imageUrl,
+              Area: obj[key].Area,
+              Nombre: obj[key].Nombre,
+              tipoMantenimiento: obj[key].tipoMantenimiento,
               date: obj[key].date,
               creatorId: obj[key].creatorId
             })
@@ -77,14 +59,13 @@ export const store = new Vuex.Store({
     },
     createMeetup ({commit, getters}, payload) {
       const meetup = {
-        title: payload.title,
-        location: payload.location,
-        imageUrl: payload.imageUrl,
-        description: payload.description,
+        tipoMantenimiento: payload.tipoMantenimiento,
+        Area: payload.Area,
+        Nombre: payload.Nombre,
         date: payload.date.toISOString(),
         creatorId: getters.user.id
       }
-      firebase.database().ref('meetups').push(meetup)
+      firebase.database().ref('tickets').push(meetup)
         .then((data) => {
           const key = data.key
           commit('createMeetup', {

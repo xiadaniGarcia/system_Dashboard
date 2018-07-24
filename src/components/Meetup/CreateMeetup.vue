@@ -1,85 +1,70 @@
 <template>
   <v-container>
-    <v-layout row>
-      <v-flex xs12 sm6 offset-sm3>
-        <h4>Create a new Meetup</h4>
-      </v-flex>
-    </v-layout>
-    <v-layout row>
-      <v-flex xs12>
-        <form @submit.prevent="onCreateMeetup">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Crea un ticket</h4>
+        <form class="forms-sample" form @submit.prevent="onCreateMeetup">
+          <div class="form-group">
+            <label for="exampleFormControlSelect2">Tipo de orden de servicio</label>
+            <select class="form-control form-control-lg" id="tipoMantenimiento" v-model="tipoMantenimiento"
+                    required>
+              <option>Mantenimiento Correctivo</option>
+              <option>Mantenimiento Preventivo</option>
+              <option>Instalación</option>
+              <option>Orden de salida</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Selecciona el áre al que pertenece</label>
+            <select class="form-control form-control-lg" id="Area" v-model="Area"
+                    required>
+              <option>Quirófano 1</option>
+              <option>Quirófano 2</option>
+              <option>Quirófano Lasik</option>
+              <option>Quirófano externo</option>
+              <option>Consultorio 2</option>
+              <option>Consultorio 3</option>
+              <option>Consultorio 4</option>
+              <option>Consultorio 5</option>
+              <option>Consultorio 9</option>
+              <option>Sala estudios</option>
+              <option>OCT</option>
+              <option>Campimetría</option>
+              <option>Electrofisiología</option>
+              <option>CEYE</option>
+              <option>Subceye</option>
+              <option>Biomédica</option>
+              <option>Azotea</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Equipo</label>
+            <input type="text" class="form-control" id="Nombre" placeholder="Nombre del equipo" v-model="Nombre"
+                   required>
+          </div>
+
           <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-              <v-text-field
-                name="title"
-                label="Title"
-                id="title"
-                v-model="title"
-                required></v-text-field>
-            </v-flex>
-          </v-layout>
-          <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-              <v-text-field
-                name="location"
-                label="Location"
-                id="location"
-                v-model="location"
-                required></v-text-field>
-            </v-flex>
-          </v-layout>
-          <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-              <v-text-field
-                name="imageUrl"
-                label="Image URL"
-                id="image-url"
-                v-model="imageUrl"
-                required></v-text-field>
-            </v-flex>
-          </v-layout>
-          <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-              <img :src="imageUrl" height="150">
-            </v-flex>
-          </v-layout>
-          <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-              <v-text-field
-                name="description"
-                label="Description"
-                id="description"
-                multi-line
-                v-model="description"
-                required></v-text-field>
-            </v-flex>
-          </v-layout>
-          <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-              <h4>Choose a Data & Time</h4>
-            </v-flex>
-          </v-layout>
-          <v-layout row class="mb-2">
-            <v-flex xs12 sm6 offset-sm3>
+
+            <v-flex xs12 sm6 offset-sm1>
               <v-date-picker v-model="date"></v-date-picker>
             </v-flex>
-          </v-layout>
-          <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
+
+            <v-flex xs12 sm3 >
               <v-time-picker v-model="time" format="24hr"></v-time-picker>
+
             </v-flex>
+
           </v-layout>
-          <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-              <v-btn
-                class="primary"
-                :disabled="!formIsValid"
-                type="submit">Create Meetup</v-btn>
-            </v-flex>
-          </v-layout>
+          <v-btn
+            class="btn btn-gradient-primary mr-2"
+            :disabled="!formIsValid"
+            type="submit">Levantar ticket</v-btn>
+          <button class="btn btn-light">Cancel</button>
         </form>
-      </v-flex>
-    </v-layout>
+      </div>
+    </div>
+
   </v-container>
 </template>
 
@@ -87,20 +72,18 @@
   export default {
     data () {
       return {
-        title: '',
-        location: '',
-        imageUrl: '',
-        description: '',
+        tipoMantenimiento: '',
+        Area: '',
+        Nombre: '',
         date: new Date(),
         time: new Date()
       }
     },
     computed: {
       formIsValid () {
-        return this.title !== '' &&
-          this.location !== '' &&
-          this.imageUrl !== '' &&
-          this.description !== ''
+        return this.tipoMantenimiento !== '' &&
+          this.Area !== '' &&
+          this.Nombre !== ''
       },
       submittableDateTime () {
         const date = new Date(this.date)
@@ -122,14 +105,13 @@
           return
         }
         const meetupData = {
-          title: this.title,
-          location: this.location,
-          imageUrl: this.imageUrl,
-          description: this.description,
+          tipoMantenimiento: this.tipoMantenimiento,
+          Area: this.Area,
+          Nombre: this.Nombre,
           date: this.submittableDateTime
         }
         this.$store.dispatch('createMeetup', meetupData)
-        this.$router.push('/meetups')
+        this.$router.push('/tickets')
       }
     }
   }
