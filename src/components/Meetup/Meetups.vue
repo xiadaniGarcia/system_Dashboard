@@ -9,7 +9,8 @@
                 <v-card-media
                   :src="meetup.Nombre"
                   height="130px"
-                ></v-card-media>
+                >
+                </v-card-media>
               </v-flex>
               <v-flex xs7 sm8 md9>
                 <v-card-title primary-title>

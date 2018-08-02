@@ -133,7 +133,7 @@
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Recent Updates</h4>
+                  <h4 class="card-title">Remodelación del departamento</h4>
                   <div class="d-flex">
                     <div class="d-flex align-items-center mr-4 text-muted font-weight-light">
                       <i class="mdi mdi-account-outline icon-sm mr-2"></i>
@@ -198,7 +198,7 @@
                           1
                         </td>
                         <td>
-                          Herman Beck
+                          Realizar inventorio
                         </td>
                         <td>
                           May 15, 2015
@@ -214,7 +214,7 @@
                           2
                         </td>
                         <td>
-                          Messsy Adam
+                          Crear formato de ordenes de servicio
                         </td>
                         <td>
                           Jul 01, 2015
@@ -230,7 +230,7 @@
                           3
                         </td>
                         <td>
-                          John Richards
+                          Llenar stock de desechables
                         </td>
                         <td>
                           Apr 12, 2015
@@ -246,7 +246,7 @@
                           4
                         </td>
                         <td>
-                          Peter Meggik
+                          Remodelación del departamento de biomédica
                         </td>
                         <td>
                           May 15, 2015
@@ -262,7 +262,7 @@
                           5
                         </td>
                         <td>
-                          Edward
+                          Seguir lineamientos de la NOM
                         </td>
                         <td>
                           May 03, 2015
@@ -278,12 +278,15 @@
                           5
                         </td>
                         <td>
-                          Ronald
+                          Capacitación del departamento de enfermería
                         </td>
                         <td>
                           Jun 05, 2015
                         </td>
                         <td>
+
+
+
                           <div class="progress">
                             <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
@@ -296,6 +299,16 @@
               </div>
             </div>
           </div>
+    <div class="row">
+      <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+
+            <img src="../../images/calendar.png" class="mr-2" alt="image">
+          </div>
+        </div>
+      </div>
+    </div>
 
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->

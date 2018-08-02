@@ -26,7 +26,7 @@
                   <div class="form-group">
                     <input type="password" v-model="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" required>
                   </div>
-                  <v-btn type="submit" :disabled="loading" :loading="loading"  class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">
+                  <v-btn  type="submit" :disabled="loading" :loading="loading"  class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">
                     Sign in
                     <span slot="loader" class="custom-loader" >
                         <v-icon light>cached</v-icon>
