@@ -18,7 +18,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn class="primary">Update</v-btn>
+            <v-btn class="primary" @click="createPDF">Generar PDF</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -30,11 +30,22 @@
 </template>
 
 <script>
+  import JsPDF from 'jspdf'
   export default {
     props: ['id'],
     computed: {
       meetup () {
         return this.$store.getters.loadedMeetup(this.id)
+      }
+    },
+    methods: {
+      createPDF () {
+        let pdfName = 'ordenDeServicio'
+        var doc = new JsPDF()
+        doc.text('Este es un ejemplo de una orden de servicio ', 10, 10)
+        doc.text('fue generada automáticamente por el programa ', 10, 50)
+        doc.text('se recomienda proveer una plantilla con logotipo e informacion', 10, 90)
+        doc.save(pdfName + '.pdf')
       }
     }
   }
