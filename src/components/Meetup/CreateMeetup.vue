@@ -59,7 +59,7 @@
           <v-btn
             class="btn btn-gradient-primary mr-2"
             :disabled="!formIsValid"
-            type="submit">Levantar ticket</v-btn>
+            type="submit" v-on:click="showAlert">Levantar ticket</v-btn>
           <button class="btn btn-light">Cancel</button>
         </form>
       </div>
@@ -112,6 +112,16 @@
         }
         this.$store.dispatch('createMeetup', meetupData)
         this.$router.push('/tickets')
+      },
+      showAlert () {
+        // Use sweetalret2
+        this.$swal({
+          type: 'success',
+          title: 'Your work has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.$router.go('/meetups')
       }
     }
   }

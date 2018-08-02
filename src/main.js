@@ -6,6 +6,7 @@ import router from './router'
 import { store } from './store'
 import DateFilter from './filters/date'
 import AlertCmp from './components/Shared/Alert.vue'
+import VueSweetalert2 from 'vue-sweetalert2'
 
 require('../css/style.css')
 require('../vendors/iconfonts/mdi/css/materialdesignicons.min.css')
@@ -18,7 +19,7 @@ require('../vendors/css/vendor.bundle.base.css')
 
 Vue.use(Vuetify)
 Vue.config.productionTip = false
-
+Vue.use(VueSweetalert2)
 Vue.filter('date', DateFilter)
 Vue.component('app-alert', AlertCmp)
 
