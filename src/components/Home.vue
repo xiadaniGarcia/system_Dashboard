@@ -25,7 +25,7 @@
                   <h4 class="font-weight-normal mb-3">Ordenes de Servicio del mes
                     <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                   </h4>
-                  <h1 class="mb-5">12</h1>
+                  <h1 class="mb-5" style="margin-bottom: 3rem !important; text-align: center; font-size: 4rem;">12</h1>
                 </div>
               </div>
             </div>
@@ -36,7 +36,7 @@
                   <h4 class="font-weight-normal mb-3">Ordenes Activas
                     <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                   </h4>
-                  <h1 class="mb-5">4</h1>
+                  <h1 class="mb-5" style="margin-bottom: 3rem !important; text-align: center;font-size: 4rem;">4</h1>
                 </div>
               </div>
             </div>
@@ -81,25 +81,25 @@
             <div class="col-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Recent Tickets</h4>
+                  <h4 class="card-title">Tickets recientes</h4>
                   <div class="table-responsive">
                     <table class="table" v-for="meetup in meetups" :key="meetup.id">
                       <thead>
                       <tr>
                         <th>
-                          Assignee
+                          Asignado
                         </th>
                         <th>
-                          Area
+                          Área
                         </th>
                         <th>
-                          Status
+                          Estatus
                         </th>
                         <th>
-                          Last Update
+                          Fecha de modificación
                         </th>
                         <th>
-                          Tracking ID
+                          ID
                         </th>
                       </tr>
                       </thead>
@@ -113,7 +113,7 @@
                           {{ meetup.Area }}
                         </td>
                         <td>
-                          <label class="badge-gradient-success">Completado</label>
+                          <label class="badge-gradient-warning">Pendiente</label>
                         </td>
                         <td>
                           {{ meetup.date }}
@@ -133,33 +133,47 @@
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Remodelación del departamento</h4>
+                  <h4 class="card-title">Gastos</h4>
                   <div class="d-flex">
                     <div class="d-flex align-items-center mr-4 text-muted font-weight-light">
                       <i class="mdi mdi-account-outline icon-sm mr-2"></i>
-                      <span>jack Menqu</span>
+                      <span>Departamento Biomédica</span>
                     </div>
                     <div class="d-flex align-items-center text-muted font-weight-light">
                       <i class="mdi mdi-clock icon-sm mr-2"></i>
-                      <span>October 3rd, 2018</span>
+                      <span>Actualiizado Agosto 2018</span>
                     </div>
                   </div>
                   <div class="row mt-3">
-                    <div class="col-6 pr-1">
-                      <img src="../../images//dashboard/img_1.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
-                      <img src="../../images//dashboard/img_4.jpg" class="mw-100 w-100 rounded" alt="image">
+                    <div class="col-7 pr-1">
+                      <img src="../../images//graphs/gastos.jpg" class="mb-2  rounded" style="text-align: center" alt="image">
                     </div>
-                    <div class="col-6 pl-1">
-                      <img src="../../images//dashboard/img_2.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
-                      <img src="../../images//dashboard/img_3.jpg" class="mw-100 w-100 rounded" alt="image">
+                    <div class="col-md-4 stretch-card grid-margin">
+                      <div class="card bg-gradient-success card-img-holder text-white">
+                        <div class="card-body">
+                          <img src="../../images//dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>
+                          <h4 class="font-weight-normal mb-3">Gastos innecesarios mensuales
+                            <i class="mdi mdi-diamond mdi-24px float-right"></i>
+                          </h4>
+                          <h1 style="text-align: center;" class="mb-5">12,500</h1>
+                          <h6 class="card-text">20% menos respecto al anterior</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-8">
+                      <img src="../../images//graphs/gastosAño.png" class="mb-2  rounded" style="text-align: center" alt="image">
+                    </div>
+                    <div class="col-md-4">
                     </div>
                   </div>
                   <div class="d-flex mt-5 align-items-top">
                     <img src="../../images//faces/face3.jpg" class="img-sm rounded-circle mr-3" alt="image">
                     <div class="mb-0 flex-grow">
-                      <h5 class="mr-2 mb-2">School Website - Authentication Module.</h5>
-                      <p class="mb-0 font-weight-light">It is a long established fact that a reader will be distracted by the readable
-                        content of a page.</p>
+                      <h5 class="mr-2 mb-2">Departamento de biomédica</h5>
+                      <p class="mb-0 font-weight-light">Los resultados indican una disminución cosiderable en los costos no necesarios.</p>
                     </div>
                     <div class="ml-auto">
                       <i class="mdi mdi-heart-outline text-muted"></i>
@@ -173,7 +187,7 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Project Status</h4>
+                  <h4 class="card-title">Estatus de proyectos</h4>
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
@@ -182,13 +196,13 @@
                           #
                         </th>
                         <th>
-                          Name
+                          Nombre
                         </th>
                         <th>
-                          Due Date
+                          Fecha de entrega
                         </th>
                         <th>
-                          Progress
+                          Progreso
                         </th>
                       </tr>
                       </thead>
@@ -201,7 +215,7 @@
                           Realizar inventorio
                         </td>
                         <td>
-                          May 15, 2015
+                          May 15, 2018
                         </td>
                         <td>
                           <div class="progress">
@@ -217,7 +231,7 @@
                           Crear formato de ordenes de servicio
                         </td>
                         <td>
-                          Jul 01, 2015
+                          Jul 01, 2019
                         </td>
                         <td>
                           <div class="progress">
@@ -233,7 +247,7 @@
                           Llenar stock de desechables
                         </td>
                         <td>
-                          Apr 12, 2015
+                          Apr 12, 2019
                         </td>
                         <td>
                           <div class="progress">
@@ -249,7 +263,7 @@
                           Remodelación del departamento de biomédica
                         </td>
                         <td>
-                          May 15, 2015
+                          May 15, 2019
                         </td>
                         <td>
                           <div class="progress">
@@ -265,7 +279,7 @@
                           Seguir lineamientos de la NOM
                         </td>
                         <td>
-                          May 03, 2015
+                          May 03, 2020
                         </td>
                         <td>
                           <div class="progress">
@@ -281,7 +295,7 @@
                           Capacitación del departamento de enfermería
                         </td>
                         <td>
-                          Jun 05, 2015
+                          Jun 05, 2018
                         </td>
                         <td>
 
@@ -304,7 +318,7 @@
         <div class="card">
           <div class="card-body">
 
-            <img src="../../images/calendar.png" class="mr-2" alt="image">
+            <img src="../../images/calendar.png" class="mr-2" style="text-align: center" alt="image">
           </div>
         </div>
       </div>
@@ -314,7 +328,7 @@
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2017 <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap Dash</a>. All rights reserved.</span>
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018. All rights reserved.</span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
           </div>
         </footer>

@@ -5,18 +5,7 @@
         <h4 class="card-title">Crea un ticket</h4>
         <form class="forms-sample" form @submit.prevent="onCreateMeetup">
           <div class="form-group">
-            <label for="exampleFormControlSelect2">Tipo de orden de servicio</label>
-            <select class="form-control form-control-lg" id="tipoMantenimiento" v-model="tipoMantenimiento"
-                    required>
-              <option>Mantenimiento Correctivo</option>
-              <option>Mantenimiento Preventivo</option>
-              <option>Instalación</option>
-              <option>Orden de salida</option>
-              <option>Otro</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Selecciona el áre al que pertenece</label>
+            <label for="exampleFormControlSelect1">Selecciona el área al que pertenece</label>
             <select class="form-control form-control-lg" id="Area" v-model="Area"
                     required>
               <option>Quirófano 1</option>
@@ -39,11 +28,25 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Equipo</label>
+            <label for="exampleInputEmail1">Nombre del equipo</label>
             <input type="text" class="form-control" id="Nombre" placeholder="Nombre del equipo" v-model="Nombre"
                    required>
           </div>
-
+          <div class="form-group">
+            <label for="exampleInputEmail1">Descripción de la falla</label>
+            <input style="height: 100px"
+              type="text" class="form-control" id="descripcion" placeholder="Describa la falla" v-model="descripcion"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Turno en que se presentó</label>
+            <select class="form-control form-control-lg" id="turno" v-model="turno"
+                    required>
+              <option>Matutino</option>
+              <option>Vespertino</option>
+              <option>Nocturno</option>
+            </select>
+          </div>
           <v-layout row>
 
             <v-flex xs12 sm6 offset-sm1>
@@ -81,8 +84,7 @@
     },
     computed: {
       formIsValid () {
-        return this.tipoMantenimiento !== '' &&
-          this.Area !== '' &&
+        return this.Area !== '' &&
           this.Nombre !== ''
       },
       submittableDateTime () {
@@ -105,7 +107,7 @@
           return
         }
         const meetupData = {
-          tipoMantenimiento: this.tipoMantenimiento,
+          tipoMantenimiento: 'Correctivo',
           Area: this.Area,
           Nombre: this.Nombre,
           date: this.submittableDateTime
@@ -119,7 +121,7 @@
           type: 'success',
           title: 'Your work has been saved',
           showConfirmButton: false,
-          timer: 1500
+          timer: 8000
         })
         this.$router.go('/meetups')
       }

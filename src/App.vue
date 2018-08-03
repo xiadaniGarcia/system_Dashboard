@@ -73,8 +73,7 @@
         if (this.userIsAuthenticated) {
           menuItems = [
             {icon: 'supervisor_account', title: 'Manage tickets', link: '/meetups'},
-            {icon: 'room', title: 'Raise ticket', link: '/meetup/new'},
-            {icon: 'person', title: 'Profile', link: '/profile'}
+            {icon: 'room', title: 'Raise ticket', link: '/meetup/new'}
           ]
         }
         return menuItems
